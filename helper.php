@@ -425,6 +425,9 @@ class helper_plugin_publish extends DokuWiki_Plugin {
         if (!isset($meta['approval'])) {
             return false;
         }
+        if (!isset($meta['last_change']['date'])){
+            return false;
+        }
 
         $data[] = array($id, $meta['approval'], $meta['last_change']['date']);
         return false;
